@@ -1,0 +1,29 @@
+
+.list-item {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.list-item:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+.header-bg {
+  background-image: url(./assets/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+}
+
+.dragging {
+  transform: scale(1.05);
+}
+
+
+
+
+
+
