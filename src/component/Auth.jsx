@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
+
 const Auth = () => {
   const Navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);

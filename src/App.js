@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { onAuthStateChanged } from "firebase/auth";
@@ -9,25 +9,29 @@ import { ToastContainer, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-function App() {
-const [user, setUser] = useState(localStorage.getItem("user"))
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (userAuth) => {
-      if (userAuth) {
-        setUser(localStorage.getItem("user"))
-      } 
-    });
-  },[])
+function App() {
+const [active, setActive] = useState(false)
+const userNumber = localStorage.length;
+
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (res) => {
+    if (res) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  });
+  return unsubscribe;
+}, [userNumber]);
 
   return (
     <>
-    <BrowserRouter>
+  
       <Routes>
       <Route path="/" element={<Login />} />
-        {user &&  <Route path="/home" element={<Home />} />}
+        {active &&  <Route path="/home" element={<Home />} />}
         </Routes>
-        </BrowserRouter>
         <ToastContainer
         position="top-right"
         autoClose={4000}
