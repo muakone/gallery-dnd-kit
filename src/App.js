@@ -24,8 +24,8 @@ const [user, setUser] = useState(localStorage.getItem("user"))
     <>
     <BrowserRouter>
       <Routes>
-        {user &&  <Route path="/" element={<Home />} />}
-        <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
+        {user &&  <Route path="/home" element={<Home />} />}
         </Routes>
         </BrowserRouter>
         <ToastContainer
