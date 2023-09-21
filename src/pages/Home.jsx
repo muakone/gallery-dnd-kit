@@ -72,7 +72,7 @@ const Home = () => {
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <div className="sm:p-3 my-4 w-[95%] mx-auto flex justify-center">
+        <div className="sm:p-3 my-4 w-[95%] mx-auto flex justify-center max-md:overflow-hidden">
           <SortableContext items={items} strategy={rectSortingStrategy}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 w-full mx-auto items-center">
               {items.map((item, index) => (

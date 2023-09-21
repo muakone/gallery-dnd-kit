@@ -13,7 +13,8 @@ export function SortableItem(props) {
 
   console.log(props);
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="md:touch-auto touch-none">
+    <div className="touch-none">
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="">
       <div className="bg-white rounded-md sm:w-72 w-[290px] min-h-[400px] mt-3 mx-auto shadow-md sm:cursor-grab cursor-not-allowed">
       <div
         className="w-full h-[320px] rounded-t-md"
@@ -38,6 +39,7 @@ export function SortableItem(props) {
         </div>
       </div>
         </div>
+    </div>
     </div>
   );
 }
